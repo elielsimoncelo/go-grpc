@@ -1,7 +1,12 @@
-# Installs
-go mod tidy
+# Install packages & tools
+- go install google.golang.org/protobuf/cmd/protoc-gen-go
+- go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+- go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
-# Configurations
+# Install dependencies
+g- o mod tidy
+
+# Generate protos
 - protoc --proto_path=proto proto/*.proto --go_out=pb
 - protoc --proto_path=proto proto/*.proto --go_out=pb --go-grpc_out=pb
 
@@ -12,5 +17,5 @@ go mod tidy
 - kreya (https://kreya.app/) # Download: https://kreya.app/downloads/
 - wombat https://github.com/rogchap/wombat # Macos: brew install --cask wombat
 
-# Use Evans
+# Using evans
 - evans -r repl --host localhost --port 50051
