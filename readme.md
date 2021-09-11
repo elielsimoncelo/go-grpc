@@ -1,14 +1,14 @@
 # Install packages & tools
-- go install google.golang.org/protobuf/cmd/protoc-gen-go
 - go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+- go install google.golang.org/protobuf/cmd/protoc-gen-go
 - go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
 # Install dependencies
-g- o mod tidy
+- go mod tidy
 
 # Generate protos
 - protoc --proto_path=proto proto/*.proto --go_out=pb
-- protoc --proto_path=proto proto/*.proto --go_out=pb --go-grpc_out=pb
+- protoc --proto_path=proto proto/*.proto --go_out=pb --go-grpc_out=pb # execute this command always that the .proto files changed
 
 # GRPC Clients
 - evans (https://github.com/ktr0731/evans) # Macos: brew tap ktr0731/evans // brew install evans
